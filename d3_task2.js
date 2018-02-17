@@ -60,13 +60,13 @@ canvas.append("g")
     .attr("transform", "translate(1470,300)")
     .call(y_axis);
 
-canvas.append("g")
-    .attr("transform","translate(290,490)")
-    .append("text")
-    .attr("fill","#d0d0d0")
-    .style("font-size", "180px")
-    .style("font-family","Sans-serif")
-    .text("Temperature");
+// canvas.append("g")
+//     .attr("transform","translate(290,490)")
+//     .append("text")
+//     .attr("fill","#d0d0d0")
+//     .style("font-size", "180px")
+//     .style("font-family","Sans-serif")
+//     .text("Temperature");
 
 line_data = [
     {p: [{x: 0, y: 0}, {x: 1365, y: 0}]},
@@ -105,7 +105,7 @@ d3.csv("222.csv", function (data2) {
             .append("path")
             .attr("d", line)
             .attr("fill", "none")
-            .attr("stroke", "red")
+            .attr("stroke", "#ff565b")
             .attr("stroke-width", 4)
             .attr("stroke-linecap", "round");
 
@@ -134,11 +134,87 @@ d3.csv("222.csv", function (data2) {
             .append("tspan")
             .attr("x", function (d) { return (d.LONT-23) * 100 - 20 + 4; })
             .text(function (d) { return d.TEMP + "℃" })
+            .attr("fill","#000000")
+            .style("font-size", "15px")
+            .style("font-family","Sans-serif")
             .append("tspan")
             .attr("x", function (d) { return (d.LONT-23) * 100 - 20; })
-            .attr("dy","1em")
+            .attr("dy","1.1em")
             .text(function (d) { return d.MON + " " + d.DAY;})
             .attr("fill","#000000")
             .style("font-size", "15px")
             .style("font-family","Sans-serif");
 });
+
+lables_data = [
+    {p: [{x: 0, y: 0}, {x: 40, y: 0}],w: 5, c:"#3b7adf"},
+    {p: [{x: 0, y: 30}, {x: 40, y: 30}],w: 5, c:"#00cfef"},
+    {p: [{x: 300, y: 0}, {x: 340, y: 0}], w: 5, c:"#be611f"},
+    {p: [{x: 300, y: 30}, {x: 340, y: 30}], w: 5, c:"#ffb312"},
+    {p: [{x: 600, y: 0}, {x: 640, y: 0}], w: 5, c:"#109618"},
+    {p: [{x: 600, y: 30}, {x: 640, y: 30}], w: 5, c:"#10ec00"},
+    {p: [{x: 920, y: 0}, {x: 920, y: 0}], w: 10, c:"black"},
+    {p: [{x: 900, y: 30}, {x: 940, y: 30}], w: 4, c:"#ff565b"},
+
+    {p: [{x: 0, y: 90}, {x: 40, y: 90}], w: 50, c:"black"},
+    {p: [{x: 300, y: 90}, {x: 340, y: 90}], w: 33.33, c:"black"},
+    {p: [{x: 600, y: 90}, {x: 640, y: 90}], w: 16.67, c:"black"},
+    {p: [{x: 900, y: 90}, {x: 940, y: 90}], w: 0.83, c:"black"}
+];
+
+lables_text = [
+    {x: 50, y: 5, w: 5, t: "Division: 1 Direction: A"},
+    {x: 50, y: 35,w: 5, t: "Division: 1 Direction: R"},
+    {x: 350, y: 5, w: 5, t: "Division: 2 Direction: A"},
+    {x: 350, y: 35, w: 5,t: "Division: 2 Direction: R"},
+    {x: 650, y: 5, w: 5, t: "Division: 3 Direction: A"},
+    {x: 650, y: 35, w: 5, t: "Division: 3 Direction: R"},
+    {x: 950, y: 5, w: 10, t: "City Name"},
+    {x: 950, y: 35, w: 4, t: "Temperature"},
+
+    {x: 70, y: 95, w: 5, t: "Survivors: 30,000"},
+    {x: 360, y: 95, w: 5, t: "Survivors: 20,000"},
+    {x: 655, y: 95, w: 5, t: "Survivors: 10,000"},
+    {x: 950, y: 95, w: 5, t: "Survivors: 5,000"}
+
+];
+
+canvas.append("g")
+    .attr("transform", "translate(150, 680)")
+    .selectAll('path')
+    .data(lables_data)
+    .enter()
+        .append('path')
+        .attr('d', function(d) { return line(d.p); })
+        .attr("stroke", function (d) { return d.c})
+        .attr("stroke-width", function (d) { return d.w})
+        .attr("stroke-linecap", "round");
+
+canvas.append("g")
+    .attr("transform", "translate(150, 680)")
+    .selectAll('text')
+    .data(lables_text)
+    .enter()
+        .append('text')
+        .attr("x", function (d) { return d.x })
+        .attr("y", function (d) { return d.y })
+        .text(function (d) { return d.t })
+        .attr("fill","#000000")
+        .style("font-size", "15px")
+        .style("font-family","Sans-serif");
+
+// canvas.append("g")
+//     .attr("transform", "translate(200, 680)")
+//     .append("line")
+//     .attr("x1", 0)
+//     .attr("y1", 0)
+//     .attr("x2", 20)
+//     .attr("y2", 0)
+//     .attr("stroke", "#3b7adf")
+//     .attr("stroke-width",10)
+//     .attr("stroke-linecap", "round")
+//     .append("text")
+//     .text("sdadadsa")
+//     .attr("fill","#000000")
+//     .style("font-size", "15px")
+//     .style("font-family","Sans-serif");

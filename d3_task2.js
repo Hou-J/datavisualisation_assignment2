@@ -159,7 +159,11 @@ lables_data = [
     {p: [{x: 0, y: 90}, {x: 40, y: 90}], w: 50, c:"black"},
     {p: [{x: 300, y: 90}, {x: 340, y: 90}], w: 33.33, c:"black"},
     {p: [{x: 600, y: 90}, {x: 640, y: 90}], w: 16.67, c:"black"},
-    {p: [{x: 900, y: 90}, {x: 940, y: 90}], w: 0.83, c:"black"}
+    {p: [{x: 900, y: 90}, {x: 940, y: 90}], w: 8.33, c:"black"},
+    {p: [{x: 0, y: 150}, {x: 40, y: 150}], w: 6.67, c:"black"},
+    {p: [{x: 300, y: 150}, {x: 340, y: 150}], w: 5, c:"black"},
+    {p: [{x: 600, y: 150}, {x: 640, y: 150}], w: 3.33, c:"black"},
+    {p: [{x: 900, y: 150}, {x: 940, y: 150}], w: 1.67, c:"black"}
 ];
 
 lables_text = [
@@ -172,10 +176,14 @@ lables_text = [
     {x: 950, y: 5, w: 10, t: "City Name"},
     {x: 950, y: 35, w: 4, t: "Temperature"},
 
-    {x: 70, y: 95, w: 5, t: "Survivors: 30,000"},
-    {x: 360, y: 95, w: 5, t: "Survivors: 20,000"},
-    {x: 655, y: 95, w: 5, t: "Survivors: 10,000"},
-    {x: 950, y: 95, w: 5, t: "Survivors: 5,000"}
+    {x: 70, y: 95, w: 5, t: "Survivors: 300,000"},
+    {x: 360, y: 95, w: 5, t: "Survivors: 200,000"},
+    {x: 655, y: 95, w: 5, t: "Survivors: 100,000"},
+    {x: 950, y: 95, w: 5, t: "Survivors: 50,000"},
+    {x: 70, y: 155, w: 5, t: "Survivors: 40,000"},
+    {x: 360, y: 155, w: 5, t: "Survivors: 30,000"},
+    {x: 655, y: 155, w: 5, t: "Survivors: 20,000"},
+    {x: 950, y: 155, w: 5, t: "Survivors: 10,000"}
 
 ];
 

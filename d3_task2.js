@@ -188,7 +188,7 @@ lables_text = [
 ];
 
 canvas.append("g")
-    .attr("transform", "translate(150, 680)")
+    .attr("transform", "translate(250, 700)")
     .selectAll('path')
     .data(lables_data)
     .enter()
@@ -199,7 +199,7 @@ canvas.append("g")
         .attr("stroke-linecap", "round");
 
 canvas.append("g")
-    .attr("transform", "translate(150, 680)")
+    .attr("transform", "translate(250, 700)")
     .selectAll('text')
     .data(lables_text)
     .enter()

@@ -12,7 +12,7 @@
     .attr("width", 2000)
     .attr("height", 2000);
 
-    d3.csv("333.csv", function (data3) {
+    d3.csv("survivors_map.csv", function (data3) {
         function color(n, l) {
             if (n === "1") {return l === "A" ? "#3b7adf" : "#00cfef";}
             else if (n === "2") {return l === "A" ? "#be611f" : "#ffb312"}
@@ -34,7 +34,7 @@
                 .attr("stroke-linecap", "round");
     });
 
-    d3.csv("111.csv", function (data1) {
+    d3.csv("city_locations.csv", function (data1) {
         var circles = canvas.append("g")
             .selectAll("circle")
             .data(data1)
@@ -101,7 +101,7 @@
             .attr('stroke-width', 1)
             .attr('stroke', "#e2e2e2");
 
-    d3.csv("222.csv", function (data2) {
+    d3.csv("temperature.csv", function (data2) {
         var line = d3.line()
             .x(function (d) { return (d.LONT-23) * 100})
             .y(function (d) { return -d.TEMP * 10});
